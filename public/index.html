@@ -1,21 +1,27 @@
-<div id="root"></div>
-<script src="https://cdn.tailwindcss.com"></script>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sanam Sharma - Portfolio</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
     <style>
-      /* Jab tak body ya root poori tarah load na ho, tab tak screen solid black rahegi */
       html, body {
         background-color: #030712 !important;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
       }
       
-      /* Agar root khali hai (bina tailwind styles ke), toh bikhra hua text mat dikhao, bas premium loader dikhao */
       #root:empty {
         position: fixed;
         inset: 0;
@@ -24,19 +30,17 @@
         align-items: center;
         justify-content: center;
         background-color: #030712;
-        font-family: system-ui, -apple-system, sans-serif;
         z-index: 999999;
       }
 
       #root:empty::after {
         content: "";
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         border: 3px solid rgba(0, 245, 212, 0.1);
         border-radius: 50%;
         border-top-color: #00f5d4;
         animation: spin 0.8s linear infinite;
-        margin-bottom: 12px;
       }
 
       @keyframes spin {
@@ -46,5 +50,412 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      function App() {
+        const skills = [
+          { name: 'React JS', level: '85%' },
+          { name: 'JavaScript (ES6+)', level: '88%' },
+          { name: 'Tailwind CSS', level: '92%' },
+          { name: 'HTML & CSS', level: '95%' },
+          { name: 'Git & GitHub', level: '80%' },
+          { name: 'Figma & UI/UX', level: '78%' },
+          { name: 'Generative AI & Prompt Engineering', level: '85%' },
+          { name: 'C / C++ & Java', level: '75%' },
+          { name: 'PHP & Database Basics', level: '80%' },
+        ];
+
+        const aiWorkflow = [
+          {
+            title: 'UI Generation',
+            tool: 'v0.dev / Claude',
+            desc: 'Generating initial structural wireframes and atomic Tailwind structures to speed up visual layouts.',
+            icon: '🎨',
+          },
+          {
+            title: 'Logic & Debugging',
+            tool: 'GitHub Copilot',
+            desc: 'Accelerating code implementation, managing complex states, and standardizing error-handling architectures.',
+            icon: '⚙️',
+          },
+          {
+            title: 'Performance Tuning',
+            tool: 'Prompt Engineering',
+            desc: 'Optimizing rendering cycles, clean component splitting, and purging heavy unused assets.',
+            icon: '⚡',
+          },
+        ];
+
+        const timeline = [
+          {
+            year: '2026',
+            title: 'BCA Graduate',
+            org: 'Rajasthan University',
+            desc: 'Completed Bachelor of Computer Applications with focus on Data Structures, Object-Oriented Programming, and Web Architectures.',
+          },
+          {
+            year: '2025',
+            title: 'Frontend Developer & Client Projects',
+            org: 'Freelance & Open Source',
+            desc: 'Designed and deployed functional UI setups, production landing pages, and customized interactive web experiences.',
+          },
+        ];
+
+        const projects = [
+          {
+            number: '01',
+            title: 'Funny Flix',
+            desc: 'A Netflix-inspired entertainment platform UI built with React.js, featuring modern smooth animations and fully responsive states.',
+            tag: 'React Project',
+            textColor: 'text-[#00f5d4]',
+            borderColor: 'border-[#00f5d4]',
+            hoverBg: 'hover:bg-[#00f5d4]',
+            link: 'https://sanamsharma0007.github.io/OFFICAL-FUNNY-FLIX-WEBSITE/',
+          },
+          {
+            number: '02',
+            title: 'Weather Application',
+            desc: 'A collaborative academic web app integrating live weather APIs, focusing on async data fetching, error handling, and clean UI states.',
+            tag: 'API Integration',
+            status: 'Academic Project',
+            textColor: 'text-[#38bdf8]',
+            borderColor: 'border-[#38bdf8]',
+            hoverBg: 'hover:bg-[#38bdf8]',
+            link: '#',
+          },
+          {
+            number: '03',
+            title: 'Growing Star Academy',
+            desc: 'A fully responsive multipage coaching institute website featuring clean modern layout aesthetics optimized for seamless user navigation.',
+            tag: 'Client / Freelance',
+            status: 'Live Link Coming Soon',
+            textColor: 'text-[#f72585]',
+            borderColor: 'border-[#f72585]',
+            hoverBg: 'hover:bg-[#f72585]',
+            link: '#',
+          },
+          {
+            number: '04',
+            title: 'TaskFlow - Smart Kanban Board',
+            desc: 'An interactive project management dashboard featuring dynamic state updates, custom drag columns, and persistent data storage logic.',
+            tag: 'State Management Practice',
+            status: 'Frontend Complete / Logic In Progress',
+            textColor: 'text-[#ccff00]',
+            borderColor: 'border-[#ccff00]',
+            hoverBg: 'hover:bg-[#ccff00]',
+            link: '#',
+          },
+          {
+            number: '05',
+            title: 'AI Component Hub',
+            desc: 'A full-stack experimental setup to fetch custom Tailwind UI code elements from an Express.js backend via custom route endpoints.',
+            tag: 'Full-Stack Architecture',
+            status: 'Backend Prototype Phase',
+            textColor: 'text-[#a855f7]',
+            borderColor: 'border-[#a855f7]',
+            hoverBg: 'hover:bg-[#a855f7]',
+            link: '#',
+          },
+        ];
+
+        return (
+          <div className="w-full min-h-screen bg-[#030712] text-[#f9fafb] font-['DM_Sans'] px-[5%] sm:px-[8%] relative z-10 overflow-x-hidden antialiased selection:bg-[#00f5d4] selection:text-[#030712]">
+            <div className="fixed w-[400px] h-[400px] rounded-full bg-[#00f5d4] opacity-10 blur-[140px] -top-[150px] -left-[150px] z-[-1] pointer-events-none animate-pulse"></div>
+            <div className="fixed w-[450px] h-[450px] rounded-full bg-[#7c3aed] opacity-10 blur-[140px] -bottom-[150px] -right-[150px] z-[-1] pointer-events-none animate-pulse" style={{ animationDuration: '8s' }}></div>
+
+            <nav className="w-full flex flex-col sm:flex-row items-center justify-between py-4 gap-3 sticky top-0 backdrop-blur-xl bg-[#030712]/60 z-[1000] border-b border-white/[0.03]">
+              <div className="text-xl sm:text-2xl font-extrabold tracking-wider">
+                <span className="bg-gradient-to-r from-[#00f5d4] via-[#7c3aed] to-[#f72585] bg-clip-text text-transparent">
+                  SANAM.DEV
+                </span>
+              </div>
+              <ul className="flex gap-3.5 sm:gap-6 md:gap-9 list-none items-center m-0 p-0">
+                {['Home', 'About', 'Workflow', 'Skills', 'Projects', 'Contact'].map((item) => (
+                  <li key={item}>
+                    <a href={`#${item.toLowerCase()}`} className="text-[#9ca3af] font-medium text-xs sm:text-sm transition-colors duration-300 hover:text-[#00f5d4]">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <section id="home" className="py-[60px] sm:py-[120px] min-h-[calc(100vh-80px)] flex flex-col lg:flex-row items-center justify-between gap-[40px] sm:gap-[60px]">
+              <div className="text-center lg:text-left w-full order-2 lg:order-1">
+                <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/5 mb-6 text-[#9ca3af] text-xs sm:text-sm font-medium animate-pulse">
+                  <span className="w-2 h-2 rounded-full bg-[#7c3aed]"></span>
+                  Frontend Dev & Learning Backend (Node.js / Express)
+                </div>
+
+                <div className="mb-4">
+                  <span className="block text-white text-xl sm:text-2xl mb-1">Hi, I'm</span>
+                  <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter bg-gradient-to-r from-[#00f5d4] to-[#7c3aed] bg-clip-text text-transparent leading-[1.1] lg:leading-[0.95]">
+                    Sanam Sharma
+                  </h1>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#9ca3af] mt-3">
+                    Frontend Developer & Aspiring Full-Stack Engineer
+                  </h2>
+                </div>
+
+                <p className="text-[#9ca3af] text-sm sm:text-base md:text-lg leading-relaxed max-w-[600px] mx-auto lg:mx-0 mb-8 sm:mb-10">
+                  Passionate Web Developer based in Jaipur, Rajasthan. As a BCA Graduate (2026) from Rajasthan University, I specialize in crafting polished frontend user interfaces while actively expanding my skill set into backend development architectures.
+                </p>
+
+                <div className="flex justify-center lg:justify-start gap-4 mb-10 sm:mb-12">
+                  <a href="mailto:sanamsharma661@gmail.com" className="px-6 sm:px-9 py-3 sm:py-4 rounded-full bg-gradient-to-r from-[#00f5d4] to-[#7c3aed] text-[#030712] font-bold text-xs sm:text-sm transition-transform duration-300 hover:-translate-y-1 shadow-lg shadow-[#00f5d4]/10">
+                    Get In Touch
+                  </a>
+                  <a href="https://wa.me/919079817838" target="_blank" rel="noreferrer" className="px-6 sm:px-9 py-3 sm:py-4 rounded-full border border-white/[0.06] bg-white/[0.02] text-white font-semibold text-xs sm:text-sm transition-all duration-300 hover:border-[#00f5d4] hover:-translate-y-1">
+                    WhatsApp
+                  </a>
+                </div>
+
+                <div className="flex justify-center lg:justify-start gap-6 sm:gap-10 items-center">
+                  <div>
+                    <strong className="block text-2xl sm:text-4xl font-bold text-white">10+</strong>
+                    <span className="text-[#9ca3af] text-[10px] sm:text-sm">Projects Built</span>
+                  </div>
+                  <div className="w-[1px] h-8 bg-white/[0.06]"></div>
+                  <div>
+                    <strong className="block text-2xl sm:text-4xl font-bold text-white">2026</strong>
+                    <span className="text-[#9ca3af] text-[10px] sm:text-sm">BCA Graduate</span>
+                  </div>
+                  <div className="w-[1px] h-8 bg-white/[0.06]"></div>
+                  <div>
+                    <strong className="block text-2xl sm:text-4xl font-bold text-white">MERN</strong>
+                    <span className="text-[#9ca3af] text-[10px] sm:text-sm">In Progress</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full max-w-[340px] sm:max-w-[360px] relative flex justify-center lg:justify-end group order-1 lg:order-2">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00f5d4] to-[#7c3aed] opacity-15 blur-xl group-hover:opacity-25 transition-opacity duration-500 rounded-[28px] z-1"></div>
+                <div className="w-full bg-[#0b0f19]/60 border border-white/[0.06] rounded-[28px] p-6 sm:p-[30px] backdrop-blur-[20px] text-center relative z-2 transition-transform duration-500 group-hover:-translate-y-2">
+                  <div className="flex justify-between items-center mb-6">
+                    <div className="flex gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+                    </div>
+                    <span className="text-[#9ca3af] text-xs">Sanam.dev</span>
+                  </div>
+
+                  <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] relative flex items-center justify-center mx-auto mb-5">
+                    <div className="absolute inset-1.5 rounded-full bg-gradient-to-tr from-[#00f5d4] via-[#7c3aed] to-[#f72585] animate-[spin_8s_linear_infinite] z-1"></div>
+                    <img src="https://i.postimg.cc/t4xtTGnc/sanam-jpg.png" alt="Sanam Sharma" className="w-[155px] h-[155px] sm:w-[190px] sm:h-[190px] object-cover object-center rounded-full relative z-10 border-4 border-[#030712] bg-[#111827] shadow-[0_0_35px_rgba(0,245,212,0.25)]" />
+                    <div className="absolute right-4 bottom-3 w-8 h-8 rounded-full bg-gradient-to-r from-[#00f5d4] to-[#7c3aed] flex items-center justify-center z-20 text-sm shadow-md">⚡</div>
+                  </div>
+
+                  <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">Sanam Sharma</h2>
+                  <p className="text-[#00f5d4] text-xs sm:text-sm font-medium mb-4">Frontend Dev / Learning Backend</p>
+
+                  <div className="flex justify-center gap-2 flex-wrap mb-5">
+                    {['React.js', 'Tailwind', 'Node.js', 'Express'].map((t) => (
+                      <span key={t} className="px-3 py-1 rounded-full bg-[#00f5d4]/5 border border-[#00f5d4]/15 text-[#00f5d4] text-[11px] font-medium">{t}</span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-col gap-2 text-[#9ca3af] text-[11px] sm:text-xs">
+                    <div className="py-2.5 px-4 rounded-xl bg-white/[0.02]">📍 Jaipur, Rajasthan, India</div>
+                    <div className="py-2.5 px-4 rounded-xl bg-white/[0.02]">🎓 BCA Graduate (RU)</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="about" className="py-[80px] sm:py-[120px] w-screen -ml-[5%] sm:-ml-[8%] px-[5%] sm:px-[8%] bg-white/[0.01] border-y border-white/[0.06]">
+              <div className="text-[#00f5d4] tracking-[3px] uppercase text-xs font-bold flex items-center gap-3 mb-6">
+                <div className="w-[40px] h-[1px] bg-[#00f5d4]"></div>
+                About Me
+              </div>
+              <div className="grid grid-cols-1 select-none lg:grid-cols-[1.2fr_1fr] gap-[40px] sm:gap-[60px]">
+                <div>
+                  <h3 className="text-3xl sm:text-[56px] font-bold tracking-tight mb-6 sm:mb-[40px] leading-[1.2] text-white">
+                    Building Clean <em className="not-italic bg-gradient-to-r from-[#00f5d4] to-[#f72585] bg-clip-text text-transparent">Web Interfaces</em>
+                  </h3>
+                  <p className="text-[#9ca3af] text-sm sm:text-base leading-relaxed mb-5">
+                    I am a web developer who loves bridging the gap between clean code and smart design. Having completed my Bachelor of Computer Applications (BCA) from Rajasthan University, I have a solid foundation in core computing principles, which I apply daily while building interactive modern web setups.
+                  </p>
+                  <p className="text-[#9ca3af] text-sm sm:text-base leading-relaxed">
+                    I actively implement modern tech like React.js and Tailwind CSS, alongside leveraging AI workflows to speed up development, write better code, and build optimized layouts that look polished across all screen sizes.
+                  </p>
+
+                  <div className="mt-12">
+                    <h4 className="text-white font-bold text-xl mb-6">Timeline & History</h4>
+                    <div className="relative border-l border-white/[0.08] ml-2 flex flex-col gap-8">
+                      {timeline.map((item, i) => (
+                        <div key={i} className="relative pl-6 group">
+                          <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-[#00f5d4] group-hover:scale-125 transition-transform"></div>
+                          <span className="text-xs font-mono text-[#00f5d4]">{item.year}</span>
+                          <h5 className="text-white text-base font-bold mt-0.5">{item.title}</h5>
+                          <span className="text-xs text-[#9ca3af] block mb-1">{item.org}</span>
+                          <p className="text-xs sm:text-sm text-[#9ca3af]/80 leading-relaxed">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-4 sm:gap-5">
+                  <div className="p-5 sm:p-6 rounded-[20px] bg-gradient-to-br from-[#00f5d4]/10 to-transparent border border-[#00f5d4]/20">
+                    <h4 className="font-bold text-sm sm:text-base text-[#00f5d4] mb-2 flex items-center gap-2">🚀 Current Focus: Backend Architecture</h4>
+                    <p className="text-xs text-[#9ca3af] mb-4 leading-relaxed">Currently leveling up to Full-Stack by learning server-side logic, API design, and databases to build complete end-to-end applications.</p>
+                    <div className="flex gap-2 flex-wrap">
+                      {['Node.js', 'Express.js', 'MongoDB / SQL', 'RESTful APIs', 'Authentication (JWT)'].map((bSkill) => (
+                        <span key={bSkill} className="px-3 py-1 rounded-full bg-[#00f5d4]/5 border border-[#00f5d4]/20 text-white text-[11px]">{bSkill}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="p-5 sm:p-6 rounded-[20px] bg-white/[0.02] border border-white/[0.06]">
+                    <h4 className="font-bold text-sm sm:text-base text-white mb-4">Design & Intelligence Tools</h4>
+                    <div className="flex gap-2 flex-wrap">
+                      {['Figma', 'ChatGPT / Claude', 'v0.dev', 'GitHub Copilot', 'Git-GitHub', 'Canva'].map((tool) => (
+                        <span key={tool} className="px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[11px] text-[#9ca3af]">{tool}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="p-5 sm:p-6 rounded-[20px] bg-white/[0.02] border border-white/[0.06]">
+                    <h4 className="font-bold text-sm sm:text-base text-white mb-4">Core Programming & Logic</h4>
+                    <div className="flex gap-2 flex-wrap">
+                      {['JavaScript (ES6+)', 'React Component Architecture', 'C / C++', 'Java OOPs', 'PHP Basics'].map((sys) => (
+                        <span key={sys} className="px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[11px] text-[#9ca3af]">{sys}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="workflow" className="py-[80px] sm:py-[120px]">
+              <div className="text-[#00f5d4] tracking-[3px] uppercase text-xs font-bold flex items-center gap-3 mb-6">
+                <div className="w-[40px] h-[1px] bg-[#00f5d4]"></div>
+                Methodology
+              </div>
+              <h3 className="text-3xl sm:text-[56px] font-bold tracking-tight mb-8 sm:mb-[60px] text-white">
+                AI-Augmented <em className="not-italic bg-gradient-to-r from-[#00f5d4] to-[#f72585] bg-clip-text text-transparent">Workflow</em>
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {aiWorkflow.map((flow, i) => (
+                  <div key={i} className="p-6 sm:p-8 rounded-[24px] bg-white/[0.01] border border-white/[0.04] hover:border-[#00f5d4]/30 transition-all duration-300">
+                    <div className="text-3xl mb-4">{flow.icon}</div>
+                    <h4 className="text-lg font-bold text-white mb-0.5">{flow.title}</h4>
+                    <span className="text-xs font-mono text-[#00f5d4] block mb-3">{flow.tool}</span>
+                    <p className="text-xs sm:text-sm text-[#9ca3af] leading-relaxed">{flow.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="skills" className="py-[80px] sm:py-[120px]">
+              <div className="text-[#00f5d4] tracking-[3px] uppercase text-xs font-bold flex items-center gap-3 mb-6">
+                <div className="w-[40px] h-[1px] bg-[#00f5d4]"></div>
+                Expertise
+              </div>
+              <h3 className="text-3xl sm:text-[56px] font-bold tracking-tight mb-8 sm:mb-[60px] text-white">
+                Technical <em className="not-italic bg-gradient-to-r from-[#00f5d4] to-[#f72585] bg-clip-text text-transparent">Skillset</em>
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                {skills.map((skill, index) => (
+                  <div className="p-5 sm:p-6 rounded-[20px] bg-white/[0.01] border border-white/[0.06]" key={index}>
+                    <div className="flex justify-between font-medium text-sm sm:text-base mb-3">
+                      <span className="text-white">{skill.name}</span>
+                      <span className="text-[#00f5d4]">{skill.level}</span>
+                    </div>
+                    <div className="w-full h-1.5 rounded-full bg-white/[0.05] overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-[#00f5d4] to-[#7c3aed]" style={{ width: skill.level }}></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="projects" className="py-[80px] sm:py-[120px] w-screen -ml-[5%] sm:-ml-[8%] px-[5%] sm:px-[8%] bg-white/[0.01] border-y border-white/[0.06]">
+              <div className="text-[#00f5d4] tracking-[3px] uppercase text-xs font-bold flex items-center gap-3 mb-6">
+                <div className="w-[40px] h-[1px] bg-[#00f5d4]"></div>
+                Selected Work
+              </div>
+              <h3 className="text-3xl sm:text-[56px] font-bold tracking-tight mb-8 sm:mb-[60px] text-white">
+                Featured <em className="not-italic bg-gradient-to-r from-[#00f5d4] to-[#f72585] bg-clip-text text-transparent">Projects</em>
+              </h3>
+              <div className="flex flex-col">
+                {projects.map((project, index) => (
+                  <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-10 py-8 sm:py-10 border-b border-white/[0.06] text-center md:text-left" key={index}>
+                    <div className="text-4xl sm:text-5xl font-bold text-white/10">{project.number}</div>
+                    <div className="flex-1">
+                      <span className={`text-xs font-semibold uppercase tracking-wider block mb-1 ${project.textColor}`}>{project.tag}</span>
+                      <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">{project.title}</h4>
+                      <p className="text-[#9ca3af] text-xs sm:text-sm leading-relaxed">{project.desc}</p>
+                    </div>
+                    <a href={project.link} target="_blank" rel="noreferrer" className={`w-full md:w-auto px-6 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-300 ${project.borderColor} ${project.textColor} ${project.hoverBg} hover:text-[#030712] ${project.link === '#' ? 'opacity-50 cursor-not-allowed border-white/20 text-white/40' : ''}`}>
+                      {project.link === '#' ? project.status : 'Live Link ↗'}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="contact" className="py-[80px] sm:py-[120px]">
+              <div className="text-[#00f5d4] tracking-[3px] uppercase text-xs font-bold flex items-center gap-3 mb-6">
+                <div className="w-[40px] h-[1px] bg-[#00f5d4]"></div>
+                Contact Me
+              </div>
+              <h3 className="text-3xl sm:text-[56px] font-bold tracking-tight mb-5 text-white">
+                Let's Work <em className="not-italic bg-gradient-to-r from-[#00f5d4] to-[#f72585] bg-clip-text text-transparent">Together</em>
+              </h3>
+              <p className="text-[#9ca3af] text-sm sm:text-base leading-relaxed max-w-2xl mb-8 sm:mb-10">
+                Have a project in mind, looking for a frontend intern/developer, or just want to connect? Feel free to ping me via email or text!
+              </p>
+
+              <div className="flex flex-col gap-4 max-w-[500px]">
+                <a href="mailto:sanamsharma661@gmail.com" className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-[18px] bg-white/[0.01] border border-white/[0.06] transition-all duration-300 hover:translate-x-2 hover:border-[#00f5d4]">
+                  <span className="text-xl sm:text-2xl text-[#00f5d4]">✉</span>
+                  <div className="text-left">
+                    <small className="block text-[10px] sm:text-xs text-[#9ca3af]">Email Me Directly</small>
+                    <strong className="text-xs sm:text-base text-white break-all">sanamsharma661@gmail.com</strong>
+                  </div>
+                </a>
+
+                <a href="https://wa.me/919079817838" target="_blank" rel="noreferrer" className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-[18px] bg-white/[0.01] border border-white/[0.06] transition-all duration-300 hover:translate-x-2 hover:border-[#00f5d4]">
+                  <span className="text-xl sm:text-2xl text-[#00f5d4]">💬</span>
+                  <div className="text-left">
+                    <small className="block text-[10px] sm:text-xs text-[#9ca3af]">Chat On WhatsApp</small>
+                    <strong className="text-xs sm:text-base text-white">+91 9079817838</strong>
+                  </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/sanam-sharma-700b80293?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-[18px] bg-white/[0.01] border border-white/[0.06] transition-all duration-300 hover:translate-x-2 hover:border-[#00f5d4]">
+                  <span className="text-xl sm:text-2xl text-[#00f5d4]">🔗</span>
+                  <div className="text-left">
+                    <small className="block text-[10px] sm:text-xs text-[#9ca3af]">Connect on LinkedIn</small>
+                    <strong className="text-xs sm:text-base text-white">Sanam Sharma</strong>
+                  </div>
+                </a>
+
+                <a href="https://www.instagram.com/sanamsharma007?igsh=MWN5N2ttd3g3ajg4cw==" target="_blank" rel="noreferrer" className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-[18px] bg-white/[0.01] border border-white/[0.06] transition-all duration-300 hover:translate-x-2 hover:border-[#00f5d4]">
+                  <span className="text-xl sm:text-2xl text-[#00f5d4]">📸</span>
+                  <div className="text-left">
+                    <small className="block text-[10px] sm:text-xs text-[#9ca3af]">Follow on Instagram</small>
+                    <strong className="text-xs sm:text-base text-white">@sanamsharma007</strong>
+                  </div>
+                </a>
+              </div>
+            </section>
+
+            <footer className="py-8 sm:py-10 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between gap-3 text-center sm:text-left text-[#9ca3af] text-xs sm:text-sm">
+              <div>© 2026 Sanam Sharma. Built with React.js & Tailwind CSS.</div>
+              <div>Jaipur • India</div>
+            </footer>
+          </div>
+        );
+      }
+
+      // Fixed React Mounting Logic
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
   </body>
 </html>
