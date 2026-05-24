@@ -1,0 +1,50 @@
+<div id="root"></div>
+<script src="https://cdn.tailwindcss.com"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanam Sharma - Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* Jab tak body ya root poori tarah load na ho, tab tak screen solid black rahegi */
+      html, body {
+        background-color: #030712 !important;
+      }
+      
+      /* Agar root khali hai (bina tailwind styles ke), toh bikhra hua text mat dikhao, bas premium loader dikhao */
+      #root:empty {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #030712;
+        font-family: system-ui, -apple-system, sans-serif;
+        z-index: 999999;
+      }
+
+      #root:empty::after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(0, 245, 212, 0.1);
+        border-radius: 50%;
+        border-top-color: #00f5d4;
+        animation: spin 0.8s linear infinite;
+        margin-bottom: 12px;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
