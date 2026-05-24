@@ -182,8 +182,8 @@
               </ul>
             </nav>
 
-            <section id="home" className="py-[60px] sm:py-[120px] min-h-[calc(100vh-80px)] flex flex-col lg:flex-row items-center justify-between gap-[40px] sm:gap-[60px]">
-              <div className="text-center lg:text-left w-full order-2 lg:order-1">
+            <section id="home" className="py-[40px] sm:py-[100px] min-h-[calc(100vh-80px)] flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-[50px] lg:gap-[40px]">
+              <div className="text-center lg:text-left w-full order-2 lg:order-1 lg:max-w-[60%]">
                 <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/5 mb-6 text-[#9ca3af] text-xs sm:text-sm font-medium animate-pulse">
                   <span className="w-2 h-2 rounded-full bg-[#7c3aed]"></span>
                   Frontend Dev & Learning Backend (Node.js / Express)
@@ -191,7 +191,7 @@
 
                 <div className="mb-4">
                   <span className="block text-white text-xl sm:text-2xl mb-1">Hi, I'm</span>
-                  <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter bg-gradient-to-r from-[#00f5d4] to-[#7c3aed] bg-clip-text text-transparent leading-[1.1] lg:leading-[0.95]">
+                  <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter bg-gradient-to-r from-[#00f5d4] to-[#7c3aed] bg-clip-text text-transparent leading-[1.1]">
                     Sanam Sharma
                   </h1>
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#9ca3af] mt-3">
@@ -230,7 +230,7 @@
                 </div>
               </div>
 
-              <div className="w-full max-w-[340px] sm:max-w-[360px] relative flex justify-center lg:justify-end group order-1 lg:order-2">
+              <div className="w-full max-w-[320px] sm:max-w-[360px] relative flex justify-center lg:justify-end group order-1 lg:order-2">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#00f5d4] to-[#7c3aed] opacity-15 blur-xl group-hover:opacity-25 transition-opacity duration-500 rounded-[28px] z-1"></div>
                 <div className="w-full bg-[#0b0f19]/60 border border-white/[0.06] rounded-[28px] p-6 sm:p-[30px] backdrop-blur-[20px] text-center relative z-2 transition-transform duration-500 group-hover:-translate-y-2">
                   <div className="flex justify-between items-center mb-6">
@@ -453,7 +453,6 @@
         );
       }
 
-      // Fixed React Mounting Logic
       const root = ReactDOM.createRoot(document.getElementById('root'));
       root.render(<App />);
     </script>
