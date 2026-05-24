@@ -88,7 +88,7 @@ export default function App() {
       desc: 'An interactive project management dashboard featuring dynamic state updates, custom drag columns, and persistent data storage logic.',
       tag: 'State Management Practice',
       status: 'Frontend Complete / Logic In Progress',
-      textColor: 'text-[#ccff00]', // Neon Yellow-Green accent
+      textColor: 'text-[#ccff00]',
       borderColor: 'border-[#ccff00]',
       hoverBg: 'hover:bg-[#ccff00]',
       link: '#',
@@ -99,7 +99,7 @@ export default function App() {
       desc: 'A full-stack experimental setup to fetch custom Tailwind UI code elements from an Express.js backend via custom route endpoints.',
       tag: 'Full-Stack Architecture',
       status: 'Backend Prototype Phase',
-      textColor: 'text-[#a855f7]', // Purple accent
+      textColor: 'text-[#a855f7]',
       borderColor: 'border-[#a855f7]',
       hoverBg: 'hover:bg-[#a855f7]',
       link: '#',
@@ -117,13 +117,13 @@ export default function App() {
 
       {/* STICKY NAVBAR */}
       <nav className="w-full flex flex-col sm:flex-row items-center justify-between py-4 gap-3 sticky top-0 backdrop-blur-xl bg-[#030712]/60 z-[1000] border-b border-white/[0.03]">
-        <div className="text-xl sm:text-2xl font-['Syne'] font-extrabold tracking-wider">
+        <div className="text-xl sm:text-2xl  font-extrabold tracking-wider">
           <span className="bg-gradient-to-r from-[#00f5d4] via-[#7c3aed] to-[#f72585] bg-clip-text text-transparent">
             SANAM.DEV
           </span>
         </div>
 
-        <ul className="flex gap-3.5 sm:gap-6  md:gap-9 list-none items-center m-0 p-0">
+        <ul className="flex gap-3.5 sm:gap-6 md:gap-9 list-none items-center m-0 p-0">
           {['Home', 'About', 'Workflow', 'Skills', 'Projects', 'Contact'].map(
             (item) => (
               <li key={item}>
@@ -155,7 +155,7 @@ export default function App() {
             <span className="block text-white text-xl sm:text-2xl mb-1">
               Hi, I'm
             </span>
-            <h1 className="text-4xl wrapper sm:text-6xl md:text-8xl font-['Syne'] font-extrabold tracking-tighter bg-gradient-to-r from-[#00f5d4] to-[#7c3aed] bg-clip-text text-transparent leading-[1.1] lg:leading-[0.95]">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter bg-gradient-to-r from-[#00f5d4] to-[#7c3aed] bg-clip-text text-transparent leading-[1.1] lg:leading-[0.95]">
               Sanam Sharma
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#9ca3af] mt-3">
@@ -163,7 +163,7 @@ export default function App() {
             </h2>
           </div>
 
-          <p className="text-[#9ca3af] text-sm sm:text-base  md:text-lg leading-relaxed max-w-[600px] mx-auto ... mb-8 Fly-up sm:mb-10">
+          <p className="text-[#9ca3af] text-sm sm:text-base md:text-lg leading-relaxed max-w-[600px] mx-auto lg:mx-0 mb-8 sm:mb-10">
             Passionate Web Developer based in Jaipur, Rajasthan. As a BCA
             Graduate (2026) from Rajasthan University, I specialize in crafting
             polished frontend user interfaces while actively expanding my skill
@@ -189,7 +189,7 @@ export default function App() {
 
           <div className="flex justify-center lg:justify-start gap-6 sm:gap-10 items-center">
             <div className="text-center lg:text-left">
-              <strong className="block text-2xl sm:text-4xl font-['Syne'] font-bold text-white">
+              <strong className="block text-2xl sm:text-4xl font-bold text-white">
                 10+
               </strong>
               <span className="text-[#9ca3af] text-[10px] sm:text-sm">
@@ -198,7 +198,7 @@ export default function App() {
             </div>
             <div className="w-[1px] h-8 bg-white/[0.06]"></div>
             <div className="text-center lg:text-left">
-              <strong className="block text-2xl sm:text-4xl font-['Syne'] font-bold text-white">
+              <strong className="block text-2xl sm:text-4xl font-bold text-white">
                 2026
               </strong>
               <span className="text-[#9ca3af] text-[10px] sm:text-sm">
@@ -207,7 +207,7 @@ export default function App() {
             </div>
             <div className="w-[1px] h-8 bg-white/[0.06]"></div>
             <div className="text-center lg:text-left">
-              <strong className="block text-2xl sm:text-4xl font-['Syne'] font-bold text-white">
+              <strong className="block text-2xl sm:text-4xl font-bold text-white">
                 MERN
               </strong>
               <span className="text-[#9ca3af] text-[10px] sm:text-sm">
@@ -242,7 +242,7 @@ export default function App() {
               </div>
             </div>
 
-            <h2 className="text-xl sm:text-2xl font-['Syne'] font-bold text-white mb-1">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">
               Sanam Sharma
             </h2>
             <p className="text-[#00f5d4] text-xs sm:text-sm font-medium mb-4">
@@ -277,14 +277,14 @@ export default function App() {
         id="about"
         className="py-[80px] sm:py-[120px] w-screen -ml-[5%] sm:-ml-[8%] px-[5%] sm:px-[8%] bg-white/[0.01] border-y border-white/[0.06]"
       >
-        <div className="text-[#00f5d4] tracking-[3px] uppercase text-xs font-bold flex items-center gap-3 mb-6">
+        <div className="text-[#00f5d4] tracking-[3px] uppercase text-xs font-bold flex items-center gap-3 decay mb-6">
           <div className="w-[40px] h-[1px] bg-[#00f5d4]"></div>
           About Me
         </div>
 
         <div className="grid grid-cols-1 select-none lg:grid-cols-[1.2fr_1fr] gap-[40px] sm:gap-[60px]">
           <div>
-            <h3 className="text-3xl sm:text-[56px] font-['Syne'] font-bold tracking-tight mb-6 sm:mb-[40px] leading-[1.2] text-white">
+            <h3 className="text-3xl sm:text-[56px] font-bold tracking-tight mb-6 sm:mb-[40px] leading-[1.2] text-white">
               Building Clean{' '}
               <em className="not-italic bg-gradient-to-r from-[#00f5d4] to-[#f72585] bg-clip-text text-transparent">
                 Web Interfaces
@@ -306,7 +306,7 @@ export default function App() {
 
             {/* TIMELINE */}
             <div className="mt-12">
-              <h4 className="text-white font-['Syne'] font-bold text-xl mb-6">
+              <h4 className="text-white font-bold text-xl mb-6">
                 Timeline & History
               </h4>
               <div className="relative border-l border-white/[0.08] ml-2 flex flex-col gap-8">
@@ -322,7 +322,7 @@ export default function App() {
                     <span className="text-xs text-[#9ca3af] block mb-1">
                       {item.org}
                     </span>
-                    <p className="text-xs sm:text-sm text-[#9ca3af]/80 LEADING-RELAXED">
+                    <p className="text-xs sm:text-sm text-[#9ca3af]/80 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -338,7 +338,7 @@ export default function App() {
                 <span>🚀</span> Current Focus: Backend Architecture
               </h4>
               <p className="text-xs text-[#9ca3af] mb-4 leading-relaxed">
-                Currently leveling up to Full-Stack by learning sever-side
+                Currently leveling up to Full-Stack by learning server-side
                 logic, API design, and databases to build complete end-to-end
                 applications.
               </p>
@@ -432,7 +432,7 @@ export default function App() {
           <div className="w-[40px] h-[1px] bg-[#00f5d4]"></div>
           Methodology
         </div>
-        <h3 className="text-3xl sm:text-[56px] font-['Syne'] font-bold tracking-tight mb-8 sm:mb-[60px] text-white">
+        <h3 className="text-3xl sm:text-[56px] font-bold tracking-tight mb-8 sm:mb-[60px] text-white">
           AI-Augmented{' '}
           <em className="not-italic bg-gradient-to-r from-[#00f5d4] to-[#f72585] bg-clip-text text-transparent">
             Workflow
@@ -465,7 +465,7 @@ export default function App() {
           <div className="w-[40px] h-[1px] bg-[#00f5d4]"></div>
           Expertise
         </div>
-        <h3 className="text-3xl sm:text-[56px] font-['Syne'] font-bold tracking-tight mb-8 sm:mb-[60px] text-white">
+        <h3 className="text-3xl sm:text-[56px] font-bold tracking-tight mb-8 sm:mb-[60px] text-white">
           Technical{' '}
           <em className="not-italic bg-gradient-to-r from-[#00f5d4] to-[#f72585] bg-clip-text text-transparent">
             Skillset
@@ -503,7 +503,7 @@ export default function App() {
           Selected Work
         </div>
 
-        <h3 className="text-3xl sm:text-[56px] font-['Syne'] font-bold tracking-tight mb-8 sm:mb-[60px] text-white">
+        <h3 className="text-3xl sm:text-[56px] font-bold tracking-tight mb-8 sm:mb-[60px] text-white">
           Featured{' '}
           <em className="not-italic bg-gradient-to-r from-[#00f5d4] to-[#f72585] bg-clip-text text-transparent">
             Projects
@@ -516,7 +516,7 @@ export default function App() {
               className="flex flex-col md:flex-row items-center gap-6 sm:gap-10 py-8 sm:py-10 border-b border-white/[0.06] text-center md:text-left"
               key={index}
             >
-              <div className="text-4xl sm:text-5xl font-['Syne'] font-bold text-white/10">
+              <div className="text-4xl sm:text-5xl font-bold text-white/10">
                 {project.number}
               </div>
 
@@ -561,7 +561,7 @@ export default function App() {
           <div className="w-[40px] h-[1px] bg-[#00f5d4]"></div>
           Contact Me
         </div>
-        <h3 className="text-3xl sm:text-[56px] font-['Syne'] font-bold tracking-tight mb-5 text-white">
+        <h3 className="text-3xl sm:text-[56px] font-bold tracking-tight mb-5 text-white">
           Let's Work{' '}
           <em className="not-italic bg-gradient-to-r from-[#00f5d4] to-[#f72585] bg-clip-text text-transparent">
             Together
